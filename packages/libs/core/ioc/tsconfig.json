@@ -1,17 +1,17 @@
 {
-    "extends": "../../../tsconfig.build.json",
+    "extends": "../../../../tsconfig.json",
     "compilerOptions": {
         "composite": true,
         "rootDir": "src",
         "outDir": "lib",
-        "declarationDir": "lib/@types",
-        "jsx": "react"
+        "declarationDir": "lib/@types"
     },
     "include": [
         "src/**/*.ts",
         "src/**/*.tsx",
+        
     ],
     "references": [
-        { "path": "../common/tsconfig.build.json" }
+        { "path": "../common/tsconfig.json" }
     ]
 }

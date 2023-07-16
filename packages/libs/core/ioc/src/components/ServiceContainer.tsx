@@ -1,4 +1,3 @@
-import React from "react";
 import { useContext } from "react";
 import { ServiceContainerContext } from "../context";
 import { ServiceContainerProps } from "../contracts/ServiceContainerProps";

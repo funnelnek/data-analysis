@@ -4,6 +4,10 @@
   "description": "",
   "main": "lib/index.js",
   "types": "@types",
+  "workspaces": [
+    "./common",
+    "./ioc"
+  ],
   "scripts": {
     "test": "jest",
     "dev": "webpack-dev-server --config webpack/development.js && npm run compress:types",

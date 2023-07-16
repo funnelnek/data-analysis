@@ -9,5 +9,9 @@
     },
     "include": [
         "src/**/*.ts"
+    ],
+    "references": [
+        { "path": "common/tsconfig.lib.json" },
+        { "path": "ioc/tsconfig.lib.json" }
     ]
 }

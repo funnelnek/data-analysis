@@ -6,5 +6,8 @@
     },
     "include": [
         "test/**/*.spec.ts"
+    ],
+    "references": [
+        { "path": "ioc/tsconfig.spec.json" }
     ]
 }
