@@ -1,5 +1,5 @@
 {
-    "extends": "../../../tsconfig.json",
+    "extends": "../../../../tsconfig.json",
     "compilerOptions": {
         "composite": true,
         "rootDir": "src",
@@ -13,7 +13,6 @@
         "src/**/*.tsx"
     ],
     "reference": [
-        { "path": "../core/tsconfig.json" },
-        { "path": "./foundation/tsconfig.json" }
+        { "path": "../../core/tsconfig.json" }
     ]
 }

@@ -1,11 +1,8 @@
 {
-  "name": "@funnelnek/themes",
+  "name": "@funnelnek/themes-foundation",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
-  "workspaces": [
-    "./foundation"
-  ],
+  "main": "lib/index.js",  
   "scripts": {
     "test": "jest",
     "dev": "webpack-dev-server --config webpack/development.js && tar czvf ./.federation/core-dts.tgz -C ./.federation/ core",

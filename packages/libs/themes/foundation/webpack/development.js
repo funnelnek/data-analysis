@@ -50,7 +50,7 @@ const development = {
                   exposes: { // The exposes configured in ModuleFederationPlugin
                     './': './src/index.ts',
                   },
-                  typesOutputDir: types// Optional, default is '.wp_federation'
+                  typesOutputDir: types // Optional, default is '.wp_federation'
                 },
               },
             ],
