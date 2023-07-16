@@ -1,0 +1,1 @@
+export type ProviderType = "ValueProvider" | "ClassProvider" | "ConstructorProvider" | "FactoryProvider" | "ExistingProvider";

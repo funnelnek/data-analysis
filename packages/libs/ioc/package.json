@@ -1,0 +1,20 @@
+{
+  "name": "@funnelnek/ioc",
+  "version": "1.0.0",
+  "description": "Typescript Inversion of Control library",
+  "main": "lib/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "ts-node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "compile": "tsc -p tsconfig.build.json",
+    "build": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "typings": "lib/@types",
+  "dependencies": {
+    "@funnelnek/common": "1.0.0",
+    "reflect-metadata": "0.1.13"
+  }
+}
