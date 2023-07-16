@@ -1,0 +1,6 @@
+{ 
+	"theme": "yaf",
+   "out": "docs",
+   "entryPoints": ["src/index.ts"],
+   "plugin": ["typedoc-theme-yaf"],
+}
