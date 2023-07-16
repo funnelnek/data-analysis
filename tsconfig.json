@@ -3,7 +3,8 @@
     "compilerOptions": {
         "composite": true,
         "paths": {
-            "@funnelnek/themes": ["libs/themes/src"]
+            "@funnelnek/themes": ["libs/themes/src/index.ts"],
+            "@funnelnek/themes/*": ["libs/themes/src"]
         }
     },
     "ts-node": {    

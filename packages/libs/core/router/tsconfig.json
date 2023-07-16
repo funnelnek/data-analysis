@@ -14,7 +14,6 @@
         { "path": "../common/tsconfig.json" },
         { "path": "../observable/tsconfig.json" },
         { "path": "../ioc/tsconfig.json" },
-        { "path": "../http/tsconfig.json" },
-        { "path": "../themes/tsconfig.json" },
+        { "path": "../http/tsconfig.json" }
     ]
 }

@@ -13,7 +13,6 @@
         { "path": "../common/tsconfig.lib.json" },
         { "path": "../observable/tsconfig.lib.json" },
         { "path": "../ioc/tsconfig.lib.json" },
-        { "path": "../http/tsconfig.lib.json" },
-        { "path": "../themes/tsconfig.lib.json" },
+        { "path": "../http/tsconfig.lib.json" }
     ]
 }

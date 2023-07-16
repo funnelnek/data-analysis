@@ -10,10 +10,9 @@
         "test/**/*.test.ts"
     ],
     "references": [
-        { "path": "../../libs/common/tsconfig.build.json" },
-        { "path": "../../libs/observable/tsconfig.build.json" },
-        { "path": "../../libs/ioc/tsconfig.build.json" },
-        { "path": "../../libs/http/tsconfig.build.json" },
-        { "path": "../../libs/themes/tsconfig.build.json" },
+        { "path": "../../libs/common/tsconfig.spec.json" },
+        { "path": "../../libs/observable/tsconfig.spec.json" },
+        { "path": "../../libs/ioc/tsconfig.spec.json" },
+        { "path": "../../libs/http/tsconfig.spec.json" }
     ]
 }
