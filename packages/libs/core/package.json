@@ -6,7 +6,10 @@
   "types": "@types",
   "workspaces": [
     "./common",
-    "./ioc"
+    "./ioc",
+    "./observable",
+    "./http",
+    "./router"
   ],
   "scripts": {
     "test": "jest",

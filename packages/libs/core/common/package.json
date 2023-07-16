@@ -3,16 +3,15 @@
   "version": "1.0.0",
   "description": "A simple common library",
   "main": "lib/index.js",
+  "workspaces": [
+    "./server"
+  ],
   "scripts": {
     "test": "jest",
-    "compile": "tsc -p tsconfig.build.json"
+    "compile": "tsc -p tsconfig.lib.json"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "typings": "lib/@types",
-  "dependencies": {
-    "@nestjs/common": "^9.3.9",
-    "scss-loader": "^0.0.1"
-  }
+  "typings": "@types"  
 }
