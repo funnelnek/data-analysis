@@ -1,0 +1,1 @@
+export type FileType = "json" | "csv" | "tsv" | "text" | "html";

@@ -1,0 +1,28 @@
+{
+    "folders": [
+        {
+            "name": "host",
+            "path": "packages/apps/host"
+        },
+        {
+            "name": "dashboard",
+            "path": "packages/apps/dashboard"
+        },
+        {
+            "name": "stats",
+            "path": "packages/libs/stats"
+        },
+        {
+            "name": "themes",
+            "path": "packages/libs/themes"
+        },
+        {
+            "name": "core",
+            "path": "packages/libs/core"
+        },
+        {
+            "name": "repo",
+            "path": "."
+        }
+    ]
+}

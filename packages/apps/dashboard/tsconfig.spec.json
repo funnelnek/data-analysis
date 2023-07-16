@@ -1,0 +1,10 @@
+{
+    "extends": "../../../tsconfig.spec.json",
+    "include": [
+        "test/**/*.spec.ts", 
+        "test/**/*.spec.tsx"
+    ],
+    "reference": [
+        { "path": "../../libs/themes/tsconfig.spec.json" }
+    ]
+}

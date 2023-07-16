@@ -1,0 +1,15 @@
+{
+  "name": "@funnelnek/host",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "webpack-dev-server --config webpack/webpack.config.js",
+    "build": "tsc --clean && tsc -b tsconfig.build.json",
+    "compile": "tsc -p tsconfig.build.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

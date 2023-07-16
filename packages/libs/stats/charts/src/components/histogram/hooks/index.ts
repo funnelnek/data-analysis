@@ -1,0 +1,1 @@
+export { useHistogram  } from './useHistogram';

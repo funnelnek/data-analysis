@@ -1,0 +1,1 @@
+export type DrawerVariant = "temporary" | "permanent" | "persistent";

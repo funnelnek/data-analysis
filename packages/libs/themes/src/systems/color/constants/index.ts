@@ -1,0 +1,1 @@
+export const CONSTRAST_THRESHOLD = 3;

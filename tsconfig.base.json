@@ -1,0 +1,55 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "target": "ES2020",
+        "module": "ES2020",
+        "rootDir": ".",
+        "outDir": "dist",
+        "composite": true,
+        "moduleResolution": "bundler",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "baseUrl": "./packages",        
+        "sourceMap": true,
+        "jsx": "react-jsx",
+        "jsxImportSource": "@emotion/react",
+        "declaration": true,
+        "declarationMap": true,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "isolatedModules": true,
+        "skipLibCheck": true,
+        "plugins": [
+            { "name": "typescript-plugin-css-modules" }
+        ]
+    },    
+    "include": [
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.module.scss",
+        "**/*.jpg",
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "<outDir>",
+        "**/*.spec.ts",
+        "**/*.test.ts",
+        "**/*.cy.ts",
+        "**/*.cy.tsx",
+        "**/jest.config.ts",
+        "**/*.d.ts"
+    ],
+    "files": [
+        "repo.d.ts"
+    ],
+    "references": [
+        { "path": "packages/lib/core/tsconfig.lib.json" },
+        { "path": "packages/lib/themes/tsconfig.lib.json" },
+        { "path": "packages/lib/stats/tsconfig.lib.json" },
+        { "path": "packages/apps/dashboard/tsconfig.build.json" },
+        { "path": "packages/apps/host/tsconfig.build.json" },
+    ]
+}

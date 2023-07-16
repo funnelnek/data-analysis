@@ -1,0 +1,22 @@
+{
+  "name": "@funnelnek/core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "types": "@types",
+  "scripts": {
+    "test": "jest",
+    "dev": "webpack-dev-server --config webpack/development.js && npm run compress:types",
+    "build": "tsc -p tsconfig.build.json --clean && tsc -b tsconfig.build.json",
+    "deploy": "webpack --config webpack/production.js && npm run compress:types",
+    "compile": "tsc -p tsconfig.build.json",
+    "compress:types": "tar czf ./@types/core-dts.tgz -C ./@types/ core"
+  },
+  "keywords": [],
+  "author": "",
+  "directories": {
+    "lib": "lib"
+  },
+  "license": "ISC"
+}
+
