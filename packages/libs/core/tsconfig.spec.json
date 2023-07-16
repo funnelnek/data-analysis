@@ -8,6 +8,9 @@
         "test/**/*.spec.ts"
     ],
     "references": [
-        { "path": "ioc/tsconfig.spec.json" }
+        { "path": "./common/tsconfig.spec.json" },
+        { "path": "./ioc/tsconfig.spec.json" },
+        { "path": "./observable/tsconfig.spec.json" },
+        { "path": "./router/tsconfig.spec.json" }
     ]
 }

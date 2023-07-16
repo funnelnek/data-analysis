@@ -1,0 +1,22 @@
+{
+  "name": "@funnelnek/router",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "typings": "@types",
+  "scripts": {
+    "test": "jest",
+    "compile": "tsc -p tsconfig.lib.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@funnelnek/common": "1.0.0",
+    "@funnelnek/http": "1.0.0",
+    "@funnelnek/observable": "1.0.0",
+    "@funnelnek/ioc": "1.0.0",
+    "@funnelnek/themes": "1.0.0",
+    "react-router": "^6.8.2"
+  }
+}

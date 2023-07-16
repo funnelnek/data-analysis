@@ -1,0 +1,17 @@
+{
+  "name": "@funnelnek/observable",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "typings": "@types",
+  "scripts": {
+    "test": "jest",
+    "compile": "tsc -p tsconfig.lib.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@funnelnek/common": "1.0.0"
+  }
+}

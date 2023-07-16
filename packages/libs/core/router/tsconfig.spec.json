@@ -1,0 +1,19 @@
+{
+    "extends": "../../../../tsconfig.spec.json",
+    "compilerOptions": {
+        "rootDir": "."
+    },
+    "include": [
+        "test/**/*.spec.ts",
+        "test/**/*.spec.tsx",
+        "test/**/*.test.tsx",
+        "test/**/*.test.ts"
+    ],
+    "references": [
+        { "path": "../../libs/common/tsconfig.build.json" },
+        { "path": "../../libs/observable/tsconfig.build.json" },
+        { "path": "../../libs/ioc/tsconfig.build.json" },
+        { "path": "../../libs/http/tsconfig.build.json" },
+        { "path": "../../libs/themes/tsconfig.build.json" },
+    ]
+}

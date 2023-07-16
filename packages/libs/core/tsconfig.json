@@ -11,7 +11,9 @@
         "src/**/*.ts"
     ],
     "references": [
-        { "path": "common/tsconfig.json" },
-        { "path": "ioc/tsconfig.json" }
+        { "path": "./common/tsconfig.json" },
+        { "path": "./ioc/tsconfig.json" },        
+        { "path": "./observable/tsconfig.json" },
+        { "path": "./router/tsconfig.json" }
     ]
 }

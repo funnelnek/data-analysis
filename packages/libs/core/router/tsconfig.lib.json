@@ -1,0 +1,19 @@
+{
+    "extends": "../../../../tsconfig.base.json",
+    "compilerOptions": {
+        "composite": true,
+        "rootDir": "src",
+        "outDir": "lib",
+        "declarationDir": "@types"
+    },
+    "include": [
+        "src/**/*", 
+    ],
+    "references": [
+        { "path": "../common/tsconfig.lib.json" },
+        { "path": "../observable/tsconfig.lib.json" },
+        { "path": "../ioc/tsconfig.lib.json" },
+        { "path": "../http/tsconfig.lib.json" },
+        { "path": "../themes/tsconfig.lib.json" },
+    ]
+}
