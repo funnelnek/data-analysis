@@ -1,10 +1,10 @@
 import { Observer, Subscription } from "rxjs";
-import { ChangeDetection } from "../types/ChangeDetection";
-import { EventHandler } from "../types/EventHandler";
-import { NextFn } from "../types/NextFn";
+import { ChangeDetection } from "../../types/event/ChangeDetection";
+import { EventHandler } from "../../types/EventHandler";
+import { NextFn } from "../../types/function/NextFn";
 
 
-export interface EventEmitter<T = any> {
+export interface IEventEmitter<T = any> {
     on(event: string, observer: Observer<T>): Subscription;
     on(event: string, next: NextFn<T>): Subscription;
     on(event: string, state: ChangeDetection<T>, changeDetection: boolean): Subscription;

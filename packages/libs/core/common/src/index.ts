@@ -1,5 +1,5 @@
-export * from "./function";
+export * from "./types/function";
 export * from "./types";
 export * from "./utils";
 export * from "./core";
-export * from "./data";
+export * from "./contracts/data";

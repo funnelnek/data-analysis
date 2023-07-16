@@ -1,3 +1,2 @@
-export * from "./EventHandler";
-export * from "./EmitterHandler";
-export * from "./NextFn";
+export * from './function';
+export * from './event';

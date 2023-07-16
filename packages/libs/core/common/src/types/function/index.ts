@@ -3,3 +3,4 @@ export * from "./Function";
 export * from "./Consumer";
 export * from "./Runnable";
 export * from "./Supplier";
+export * from "./NextFn";

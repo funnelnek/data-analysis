@@ -55,6 +55,8 @@
   "dependencies": {
     "@emotion/babel-preset-css-prop": "^11.11.0",
     "@emotion/react": "^11.11.1",
+    "@nestjs/common": "^10.0.5",
+    "@nestjs/core": "^10.0.5",
     "autosuggest-highlight": "^3.3.4",
     "axios": "^1.4.0",
     "bcryptjs": "^2.4.3",
