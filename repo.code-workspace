@@ -9,6 +9,10 @@
             "path": "packages/apps/host"
         },
         {
+            "name": "home",
+            "path": "packages/apps/home"
+        },
+        {
             "name": "dashboard",
             "path": "packages/apps/dashboard"
         },
