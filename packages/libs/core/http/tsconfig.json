@@ -4,14 +4,9 @@
         "composite": true,
         "rootDir": "src",
         "outDir": "lib",
-        "declarationDir": "@types/ioc"
+        "declarationDir": "@types/http"
     },
     "include": [
-        "src/**/*.ts",
-        "src/**/*.tsx",
-        
-    ],
-    "references": [
-        { "path": "../common/tsconfig.json" }
+        "src/**/*.ts"
     ]
 }

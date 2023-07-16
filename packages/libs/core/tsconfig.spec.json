@@ -11,6 +11,7 @@
         { "path": "./common/tsconfig.spec.json" },
         { "path": "./ioc/tsconfig.spec.json" },
         { "path": "./observable/tsconfig.spec.json" },
+        { "path": "./http/tsconfig.spec.json" },
         { "path": "./router/tsconfig.spec.json" }
     ]
 }
