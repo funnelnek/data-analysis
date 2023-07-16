@@ -5,3 +5,4 @@ export * from './modal';
 export * from './navigation';
 export * from './adminbar';
 export * from './stage';
+export * from './pane';
