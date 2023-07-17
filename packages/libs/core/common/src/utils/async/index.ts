@@ -1,4 +1,4 @@
-import { isObservable, Observable } from "rxjs";
+import { isObservable } from "rxjs";
 
 export const isAsync = (subject: any): boolean => {
     if (subject instanceof Promise || subject.prototype instanceof Promise) {
