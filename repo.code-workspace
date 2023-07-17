@@ -17,6 +17,10 @@
             "path": "packages/apps/dashboard"
         },
         {
+            "name": "dom",
+            "path": "packages/libs/core/dom"
+        },
+        {
             "name": "themes",
             "path": "packages/libs/themes"
         },
