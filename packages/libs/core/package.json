@@ -5,11 +5,12 @@
   "main": "lib/index.js",
   "types": "@types",
   "workspaces": [
-    "./common",
-    "./ioc",
-    "./observable",
-    "./http",
-    "./router"
+    ".common",
+    ".ioc",
+    ".dom",
+    ".observable",
+    ".http",
+    ".router"
   ],
   "scripts": {
     "test": "jest",

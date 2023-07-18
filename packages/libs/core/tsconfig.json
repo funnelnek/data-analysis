@@ -5,14 +5,23 @@
         "rootDir": "src",
         "outDir": "lib",
         "baseUrl": ".",
-        "declarationDir": "@types/core"
+        "declarationDir": "@types/core",
+        "paths": {
+            "@funnelnek/common": ["common/src"],
+            "@funnelnek/ioc": ["ioc/src"],
+            "@funnelnek/dom": ["dom/src"],
+            "@funnelnek/observable": ["observable/src"],
+            "@funnelnek/http": ["http/src"],
+            "@funnelnek/router": ["router/src"]
+        }
     },
     "include": [
         "src/**/*.ts"
     ],
     "references": [
         { "path": "./common/tsconfig.json" },
-        { "path": "./ioc/tsconfig.json" },        
+        { "path": "./ioc/tsconfig.json" },      
+        { "path": "./dom/tsconfig.json" },
         { "path": "./observable/tsconfig.json" },
         { "path": "./http/tsconfig.json" },
         { "path": "./router/tsconfig.json" }

@@ -3,7 +3,20 @@
     "compilerOptions": {
         "composite": true,
         "paths": {
-            "@funnelnek/themes": ["libs/themes/src/index.ts"],
+            "@funnelnek/core": ["libs/core/src"],
+            "@funnelnek/core/common": ["libs/core/common/src"],
+            "@funnelnek/core/ioc": ["libs/core/common/ioc"],
+            "@funnelnek/core/http": ["libs/core/common/http"],
+            "@funnelnek/core/router": ["libs/core/common/router"],
+            "@funnelnek/core/dom": ["libs/core/common/dom"],
+            "@funnelnek/core/observable": ["libs/core/common/observable"],
+            "@funnelnek/common": ["libs/core/common/src"],
+            "@funnelnek/ioc": ["libs/core/ioc/src"],
+            "@funnelnek/http": ["libs/core/http/src"],
+            "@funnelnek/router": ["libs/core/router/src"],
+            "@funnelnek/dom": ["libs/core/dom/src"],
+            "@funnelnek/observable": ["libs/core/observable/src"],
+            "@funnelnek/themes": ["libs/themes/src"],
             "@funnelnek/themes/*": ["libs/themes/*"]
         }
     },
