@@ -2,7 +2,7 @@ import { RouterState } from "@remix-run/router";
 import { Observable, Subject } from "rxjs";
 import { RouteIncomingSnapshot } from "../contracts";
 
-export const snapshot = (request: Observable<RouterState>): Observable<RouteIncomingSnapshot> => {
+export const routeSnapshot = (request: Observable<RouterState>): Observable<RouteIncomingSnapshot> => {
     let stream = new Subject<RouteIncomingSnapshot>();
     
     let subscription = request.subscribe({
