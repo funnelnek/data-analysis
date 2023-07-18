@@ -1,1 +1,0 @@
-export type Anchor = 'right' | 'left' | 'top' | 'bottom';
