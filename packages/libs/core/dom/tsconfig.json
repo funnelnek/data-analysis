@@ -5,9 +5,15 @@
         "rootDir": "src",
         "outDir": "lib",
         "baseUrl": ".",
-        "declarationDir": "@types/dom"
+        "declarationDir": "@types/dom",
+        "paths": {
+            "@funnelnek/ioc": ["../ioc/src"]
+        }
     },
     "include": [
         "src/**/*.ts"
+    ],
+    "references": [
+        { "path": "../ioc/tsconfig.json" }
     ]
 }
