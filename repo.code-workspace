@@ -52,5 +52,9 @@
             "name": "common",
             "path": "packages/libs/core/common"
         }
-    ]
+    ],
+    "settings": {
+        "liveServer.settings.multiRootWorkspaceName": "repo",
+        "typescript.tsdk": "repo/node_modules/typescript/lib"
+    }
 }

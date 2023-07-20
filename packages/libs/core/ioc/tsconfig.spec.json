@@ -10,7 +10,7 @@
         "test/**/*.spec.ts",
         "test/**/*.spec.tsx",
         "test/**/*.test.tsx",
-        "test/**/*.test.ts",
+        "test/**/*.test.ts"
     ],
     "references": [
         { "path": "../common/tsconfig.spec.json" }

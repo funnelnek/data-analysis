@@ -6,13 +6,17 @@
         "outDir": "lib",
         "declarationDir": "@types/themes",
         "jsx": "react-jsx",
-        "jsxImportSource": "@emotion/react"
+        "jsxImportSource": "@emotion/react",
+        "paths": {
+            "@funnelnek/core": ["../../core/src"]
+        }
     },
+    "file": ["index.ts"],
     "include": [
         "src/**/*.ts",
         "src/**/*.tsx"
     ],
-    "reference": [
+    "references": [
         { "path": "../../core/tsconfig.json" }
     ]
 }

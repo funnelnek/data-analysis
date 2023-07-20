@@ -1,6 +1,6 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
-const common = require("../../../webpack/production");
+const common = require("../../../../webpack/production");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
 
@@ -18,6 +18,7 @@ const development = {
     output: {
         filename,
         path: publicFolder,
+        publicPath: 'auto',
         clean: true,
         library: {
           name: "core",

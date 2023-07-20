@@ -5,8 +5,8 @@
         "rootDir": "src",
         "outDir": "lib"
     },
-    "reference": [
-        "charts/tsconfig.build.json",
-        "reports/tsconfig.build.json"
+    "references": [
+        {"path": "charts/tsconfig.lib.json"},
+        {"path": "reports/tsconfig.lib.json"}
     ]
 }

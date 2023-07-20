@@ -1,6 +1,6 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
-const common = require("../../../webpack/production");
+const common = require("../../../../../webpack/production");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
 

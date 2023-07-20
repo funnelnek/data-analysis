@@ -4,22 +4,18 @@ import { compilerOptions } from './tsconfig.json';
 
 
 const config: JestConfigWithTsJest = {
-  coverageDirectory: "test/coverage",
-  cacheDirectory: "test/cache",
+  verbose: false,
   preset: 'ts-jest/presets/default-esm',
-  extensionsToTreatAsEsm: ['.ts', '.tsx', '.jsx', '.mts'],
-  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: "./packages" }),
+  coverageDirectory: "test/coverage",
+  collectCoverage: true,
+  cacheDirectory: "test/cache",
+  extensionsToTreatAsEsm: ['ts', 'tsx', 'jsx'],
+  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: "<rootDir>/" }),
   transform: {
-    '^.+\\.tsx?$': ["ts-jest", { tsconfig: "tsconfig.spec.json", useESM: true }]
+    '^.+\\.tsx?$': ["ts-jest", { tsconfig: "tsconfig.spec.json" , useESM: true }]
   },
   snapshotSerializers: [
     '@emotion/jest/serializer' /* if needed other snapshotSerializers should go here */
-  ],
-  testPathIgnorePatterns: [
-    "<rootDir>/build/", 
-    "<rootDir>/node_modules/",
-    "<rootDir>/dist/",
-    "<rootDir>/lib/"
   ]
 };
 

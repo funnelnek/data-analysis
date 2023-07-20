@@ -9,8 +9,9 @@
     "include": [
         "src/**/*.ts"
     ],
-    "reference": [
+    "references": [
         { "path": "../core/tsconfig.spec.json" },
-        { "path": "./foundation/tsconfig.spec.json" }
+        { "path": "./foundation/tsconfig.spec.json" },
+        { "path": "./natours/tsconfig..lib.json" }
     ]
 }

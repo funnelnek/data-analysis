@@ -5,7 +5,7 @@
         "rootDir": "src"
     },
     "include": [
-        "test/**/*.spec.ts"
+        "**/*.spec.ts"
     ],
     "references": [
         { "path": "./common/tsconfig.spec.json" },

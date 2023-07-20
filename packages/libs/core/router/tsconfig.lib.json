@@ -7,7 +7,7 @@
         "declarationDir": "@types"
     },
     "include": [
-        "src/**/*", 
+        "src/**/*"
     ],
     "references": [
         { "path": "../common/tsconfig.lib.json" },

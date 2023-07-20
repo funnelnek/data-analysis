@@ -4,7 +4,7 @@
         "composite": true,
         "outDir": "lib",
         "rootDir": "src",
-        "declarationDir": "@types/common",
+        "declarationDir": "@types/common"
     },
     "include": [
         "src/**/*.ts"

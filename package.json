@@ -2,13 +2,14 @@
   "name": "@funnelnek/analysis",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "dev": "webpack-dev-server --config webpack/development.js",
     "build": "tsc -p tsconfig.build.json --clean && tsc -b tsconfig.build.json && tar czvf ./.federation/analysis-dts.tgz -C ./.federation/ analysis",
     "serve": "webpack --config webpack/production.js",
-    "compile": "tsc -p tsconfig.build.json"
+    "compile": "tsc -p tsconfig.build.json"    
   },
   "workspaces": [
     "packages/**"
@@ -63,6 +64,8 @@
     "autosuggest-highlight": "^3.3.4",
     "axios": "^1.4.0",
     "bcryptjs": "^2.4.3",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
     "clsx": "^1.2.1",
     "cors": "^2.8.5",
     "d3": "^7.8.5",
