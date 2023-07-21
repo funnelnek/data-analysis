@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const common = require("./common");
 const { merge } = require("webpack-merge");
+const { sass, css } = require('./options');
 
 const development = {
     mode: "development",
@@ -18,31 +19,31 @@ const development = {
                 test: /\.s[ac]ss$/,
                 use: [
                     "style-loader",
-                    { loader: "css-loader", options: { sourceMap: true } },
-                    { loader: "sass-loader" }
+                    { loader: "css-loader", options: css.dev },
+                    { loader: "sass-loader", options: sass }
                 ],
                 exclude: /\.module\.(s[ac]ss|css)$/
             },
             {
-                test: /\.module\.(s[ac]ss|css)$/,
+                test: /\.module\.s[ac]ss$/,
                 use: [
                     "style-loader",                    
-                    { loader: "css-loader", options: { 
-                        modules: {
-                            mode: "local",
-                            auto: true,
-                            localIdentName: "[local]_[hash:base64]",
-                            exportLocalsConvention: "camelCase"
-                        }, sourceMap: true 
-                    }},
-                    { loader: "sass-loader" }
+                    { loader: "css-loader", options: css.module.dev },
+                    { loader: "sass-loader", options: sass }
                 ]
             },          
+            {
+                test: /\.module\.css$/,
+                use: [
+                    "style-loader",                    
+                    { loader: "css-loader", options: css.module.dev }
+                ]
+            },
             {
                 test: /\.css$/,
                 use: [
                     "style-loader",
-                    { loader: "css-loader", options: { sourceMap: true }},
+                    { loader: "css-loader", options: css.dev },
                 ]                
             }
         ]
