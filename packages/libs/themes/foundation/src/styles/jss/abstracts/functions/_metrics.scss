@@ -1,0 +1,13 @@
+@use "../variables/fonts";
+
+$-font-base-size: fonts.$base-size;
+
+/// Converts pixel to rem.
+/// 
+/// @param {integer (unitless)} $px - The pixel size.
+/// @param {integer (unitless)} $base - The base pixel size.
+/// @return {float (unit)} - The rem size.
+/// 
+@function px2rem($px, $base: $-font-base-size) {
+    @return $px / $base * 1rem;
+}

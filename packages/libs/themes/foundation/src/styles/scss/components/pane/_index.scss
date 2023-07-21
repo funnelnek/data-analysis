@@ -1,0 +1,15 @@
+.pane {
+    transition: width .25s ease-out;
+
+    &.minimized {
+        width: 6rem;
+    }
+
+    &.collapsed {
+        width: 0rem;
+    }
+    
+    &-side {
+        width: 30rem;    
+    }
+}

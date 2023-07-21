@@ -1,0 +1,26 @@
+$unit: "rem";
+$scale: 1.25;
+$base-size: 10;
+$html-size: (math.div($base-size, 16) * 100) + "%";
+$default-font-family: Poppins;
+$headline: Poppins;
+$subtitle: Poppins;
+$body: Poppins;
+$caption: Poppins;
+$overline: Poppons;
+
+// Input Control
+$input-family: Poppins;
+$input-size: 1.6rem;
+$input-weight: 400;
+$input-label-size: 1.8rem;
+$input-label-weight: 500;
+
+:root {
+    --default-font-family: #{$default-font-family};
+    --input-family: #{$input-family};
+    --input-size: #{$input-size};
+    --input-weight: #{$input-weight};
+    --input-label-size: #{$input-label-size};
+    --input-label-weight: #{$input-label-weight};
+}

@@ -1,0 +1,24 @@
+@use "../abstracts/variables/fonts";
+
+html {
+    font-size: fonts.$html-size;
+}
+
+table {
+    tr {
+        min-height: 2.5rem;
+    }
+
+    th, td {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: left;
+        vertical-align: top;
+        white-space: nowrap;
+
+        &:not(:nth-last-of-type()) {
+            border-right: 1px solid #bbb;
+            border-bottom: 1px solid #bbb;
+        }
+    }
+}

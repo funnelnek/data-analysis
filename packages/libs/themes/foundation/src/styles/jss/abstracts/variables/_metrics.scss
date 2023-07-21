@@ -1,0 +1,21 @@
+// Base Measurement
+$unit: 'rem' !default;
+
+// Grid System
+$grid-spacing: 8 !default;
+$grid-x-spacing: $grid-spacing !default;
+$grid-y-spacing: $grid-spacing !default;
+
+// Positioning
+$base-position: 'relative' !default;
+
+// Table UI
+$table-cell-padding: 8 !default;
+$table-margin: (top: 25, right: 0, bottom: 25, left: 0);
+
+:root {
+    --grid-spacing: #{$grid-spacing};
+    --grid-x-spacing: #{$grid-x-spacing};
+    --grid-y-spacing: #{$grid-y-spacing};
+    --table-cell-padding: #{$table-cell-padding};
+}

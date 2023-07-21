@@ -1,0 +1,68 @@
+@use "../variables" as var;
+
+////
+/// @author Robert Banks
+/// @group normalizaton
+////
+
+/// HTML5 display-role reset for older browsers
+/// @group cross-browser-support
+/// @example
+/// article, aside, details, figcaption, figure, 
+/// footer, header, hgroup, menu, nav, section {
+///    display: block;
+/// }
+/// 
+@mixin html5-legacy-browser {
+    article, aside, details, figcaption, figure, 
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+}
+
+/// Reset browser default styling.
+/// @link https://meyerweb.com/eric/tools/css/reset/ CSS Tools: Reset CSS
+/// @example 
+/// #{$elements} {
+///	    margin: 0;
+///	    padding: 0;
+///	    border: 0;
+///	    font-size: 100%;
+///	    font: inherit;
+///	    vertical-align: baseline;
+/// }
+/// 
+/// @param {list (comma)} $selectors [reset-selectors]- The list of selectors to apply to resetting.
+/// @require {list (comma)} reset-selectors - The default list of selectors.
+@mixin reset($selectors: var.$reset-selectors) {
+     #{$selectors} {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+
+    @include html5-legacy-browser;
+    
+
+    body {
+        line-height: 1;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+}

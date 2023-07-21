@@ -1,0 +1,14 @@
+@forward "config" as table-*;
+@use "config";
+
+table {
+    thead.freeze th {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+    }
+
+    th, td {
+        padding: var(--table-cell-padding);
+    }
+}

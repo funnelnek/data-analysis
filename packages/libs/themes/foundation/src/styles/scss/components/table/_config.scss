@@ -1,0 +1,215 @@
+////
+/// The table configuration.
+/// @group components
+/// @author Robert Banks
+////
+
+
+//#### Table Settings ####
+//########################
+
+/// The table width
+/// @type Number | String
+$table-width: 100%;
+
+/// The table height
+/// @type Number | String
+$table-height: fit-content;
+
+/// The table minimum width.
+/// @type Number | String
+$table-min-width: 40rem !default;
+
+/// The table base font.
+/// @type List
+$table-font-family: sans-serif, !default;
+
+/// The table base font.
+/// @type Number
+$table-font-size: 1.4rem, !default;
+
+/// The table border width.
+/// @type Number
+$table-border-width: .1rem !default;
+
+/// The table border style.
+/// @type String
+$table-border-style: solid !default;
+
+/// The table border color.
+/// @type Color
+$table-border-color: #ccc !default;
+
+/// The table border collapse value
+/// @type String
+$table-border-collapse: collapse !default;
+
+/// The table border radius.
+/// @type List
+$table-border-radius: .4rem, !default;
+
+/// A map of the table margins.
+/// @type Map
+/// @prop {integer} table-margin.top - The table margin top.
+/// @prop {integer} table-margin.right - The table margin right.
+/// @prop {integer} table-margin.left - The table margin left.
+/// @prop {integer} table-margin.bottom - The table margin bottom.
+$table-margin: (top: 25, right: 0, bottom: 25, left: 0) !default;
+
+
+//#### Table Header Settings ####
+//##########################
+
+/// The table header font color.
+/// @type Color
+$table-header-font-color: #ddd !default;
+
+/// The table header background.
+/// @type Color
+$table-header-background-color: #ddd !default;
+
+//#### Caption Settings ####
+//##########################
+
+/// Table caption position
+/// @name table-caption-position
+/// @type String
+$caption-position: bottom;
+
+/// Table caption font
+/// @name table-caption-font
+/// @type List (comma)
+$caption-font: sans-serif;
+
+/// Table caption font
+/// @name table-caption-font-size
+/// @type Number (rem)
+$caption-font-size: 1.2rem;
+
+/// Table caption font
+/// @name table-caption-font-color
+/// @type Color
+$caption-font-color: #000;
+
+/// Table caption font weight
+/// @name table-caption-font-weight
+/// @type Number
+$caption-font-weight: 700;
+
+/// Table caption font style
+/// @name table-caption-font-style
+/// @type String
+$caption-font-style: normal;
+
+/// Table caption background color
+/// @name table-caption-background-color
+/// @type Color
+$caption-background-color: #000;
+
+
+//#### Row Settings ####
+//#########################
+
+/// Even rows background color.
+/// @type Color
+$row-even-background-color: #000;
+
+/// Odd rows background color.
+/// @type Color
+$row-odd-background-color: #000;
+
+/// The table row height.
+/// @name table-row-height
+/// @type Number
+$row-height: 2.4rem !default;
+
+/// The minimum row height.
+/// @type Number (rem)
+$row-min-height: 6rem !default;
+
+/// The maximum row height.
+/// @type Number
+$row-max-height: 6rem !default;
+
+/// The row hover state color.
+/// @name table-hover-row-color.
+/// @type Color
+$hover-row-color: #888;
+
+
+//#### Column Settings ####
+//#########################
+
+/// The table column width.
+/// @name table-column-width
+/// @type Number
+$column-width: 6rem !default;
+
+/// The minimum column width.
+/// @type Number
+$column-min-width: 6rem !default;
+
+/// The maximum column width.
+/// @type Number
+$column-max-width: 6rem !default;
+
+/// The column hover state color.
+/// @name table-hover-column-color.
+/// @type Color
+$hover-column-color: #888;
+
+
+//#### Cell Settings ####
+//#########################
+
+/// The cell base padding.
+/// @type List (space)
+$cell-padding: 1.2rem 1.5rem !default;
+
+/// The table rule/cell border size.
+/// @type Number
+$cell-border-size: .1rem !default;
+
+/// The table rule/cell border color.
+/// @type Color
+$cell-border-color: #ddd !default;
+
+/// The header cell font color.
+/// @type Color
+$cell-head-font-color: #fff !default;
+
+/// The header cell text alignment.
+/// @type String
+$cell-head-text-align: left !default;
+
+/// The data cell font color.
+/// @type Color
+$cell-data-font-color: #000 !default;
+
+/// The data cell text horizontal alignment.
+/// @type String
+$cell-data-text-halign: left;
+
+/// The data cell text vertical alignment.
+/// @type String
+$cell-data-text-valign: middle;
+
+/// The data cell text alignment when labeled as currency.
+/// @type String
+$cell-data-currency-align: right;
+
+
+//#### Table footer Settings ####
+//###############################
+
+/// The table footer background.
+/// @type Color
+$table-footer-background: #ddd !default;
+
+
+//#### CSS Variables ####
+//#######################
+
+:root {    
+    --table-cell-padding: #{$table-cell-padding};
+}
