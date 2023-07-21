@@ -1,7 +1,7 @@
 {
-    "name": "@funnelnek/common-server",
+    "name": "@funnelnek/server",
     "version": "1.0.0",
-    "description": "A simple common library",
+    "description": "A simple server types library",
     "main": "lib/index.js",
     "scripts": {
       "test": "jest",
@@ -12,7 +12,8 @@
     "license": "ISC",
     "typings": "lib/@types",
     "dependencies": {
-      "@nestjs/common": "^9.3.9",
+      "@nestjs/common": "^10.0.5",
+      "@nestjs/core": "^10.0.5",
       "scss-loader": "^0.0.1"
     }
   }

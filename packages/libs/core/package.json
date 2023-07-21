@@ -1,16 +1,16 @@
 {
   "name": "@funnelnek/core",
   "version": "1.0.0",
-  "description": "",
+  "description": "The core library package.",
   "main": "lib/index.js",
   "types": "@types",
   "workspaces": [
-    ".common",
-    ".ioc",
-    ".dom",
-    ".observable",
-    ".http",
-    ".router"
+    "common",
+    "ioc",
+    "dom",
+    "observable",
+    "http",
+    "router"
   ],
   "scripts": {
     "test": "jest",
@@ -25,6 +25,13 @@
   "directories": {
     "lib": "lib"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@funnelnek/common": "1.0.0",
+    "@funnelnek/ioc": "1.0.0",
+    "@funnelnek/http": "1.0.0",
+    "@funnelnek/router": "1.0.0",
+    "@funnelnek/observable": "1.0.0",
+    "@funnelnek/dom": "1.0.0"
+  }
 }
-
