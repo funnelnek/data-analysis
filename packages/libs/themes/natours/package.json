@@ -1,0 +1,26 @@
+{
+  "name": "@funnelnek/natours",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",  
+  "scripts": {
+    "test": "jest",
+    "dev": "webpack-dev-server --config webpack/development.js && tar czvf ./.federation/core-dts.tgz -C ./.federation/ core",
+    "build": "tsc -p tsconfig.build.json --clean && tsc -b tsconfig.build.json",
+    "deploy": "webpack --config webpack/production.js && tar czvf ./.federation/core-dts.tgz -C ./.federation/ core",
+    "compile": "tsc -p tsconfig.build.json",
+    "docs:styles": "sassdoc src/ -d ./docs/styles -t flippant -c ./sassdoc.yml"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/d3": "^7.4.0",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6"
+  },
+  "dependencies": {
+    "clsx": "^1.2.1",
+    "@funnelnek/foundation": "1.0.0"
+  }
+}
