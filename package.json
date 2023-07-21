@@ -9,7 +9,7 @@
     "dev": "webpack-dev-server --config webpack/development.js",
     "build": "tsc -p tsconfig.build.json --clean && tsc -b tsconfig.build.json && tar czvf ./.federation/analysis-dts.tgz -C ./.federation/ analysis",
     "serve": "webpack --config webpack/production.js",
-    "compile": "tsc -p tsconfig.build.json"    
+    "compile": "tsc -p tsconfig.build.json"
   },
   "workspaces": [
     "packages/**"
@@ -23,6 +23,8 @@
     "@babel/preset-env": "^7.22.7",
     "@emotion/jest": "^11.11.0",
     "@module-federation/typescript": "^2.3.0",
+    "@testing-library/cypress": "^9.0.0",
+    "@testing-library/react": "^14.0.0",
     "@types/bcryptjs": "^2.4.2",
     "@types/jest": "^29.5.3",
     "@types/node": "^20.4.1",
