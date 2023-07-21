@@ -1,0 +1,48 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #013914;
+    color: #fff;
+    transition: all .5s ease;
+
+    &.active {
+        background-color: #fff;
+        color: #000;
+    }
+
+    .container {
+        display: flex;
+        width: 140rem;
+        justify-content: space-between;
+        padding: 2rem 0rem;
+
+        .logo {
+            font-size: 3.4rem;
+            font-weight: bold;
+
+            .dot {
+                color: #1dbf73;
+            }
+        }
+        .links {
+            display: flex;
+            gap: 2.4rem;
+            font-weight: 500;
+            font-family: "Montserrat", sans-serif;  
+        }
+    }
+
+    .menu {
+        display: flex;        
+        width: 140rem;
+        padding: 1rem 0rem;
+        justify-content: space-between;
+        font-weight: 300;
+        font-family: "Montserrat", sans-serif;  
+        color: gray;
+        opacity: 0;
+    }
+}
