@@ -21,6 +21,10 @@
             "path": "packages/libs/core/dom"
         },
         {
+            "name": "foundation",
+            "path": "packages/libs/themes/foundation"
+        },
+        {
             "name": "themes",
             "path": "packages/libs/themes"
         },
