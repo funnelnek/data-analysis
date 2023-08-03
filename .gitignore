@@ -3,8 +3,9 @@
 .env
 node_modules
 cache
-**/*.d.ts.map
 test
+**/*.d.ts.map
+**/*.js.map
 
 
 # Compiled source #
