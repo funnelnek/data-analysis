@@ -38,27 +38,35 @@ export function sum(series: number[]): number;
  */
 export function sum(...series: number[]): number;
 /**
- * Calculates the summation from a series of numbers.
- * 
+ * Calculates the summation from a series of numbers. 
  * 
  * @since 1.0.0
  * 
  * @param {number[]} series - A series of numbers. 
  * @returns {number} - The summation of adding all the numbers.
- * 
  */
 export function sum(...series: number[] | [number[]]): number {
     if (arguments.length < 1) {
         throw new MissingArgumentError('series');
-    } else if (arguments.length == 1 && !Array.isArray(series[0])) { 
+    } 
+
+    if (arguments.length == 1 && !Array.isArray(series[0])) { 
         throw new InvalidArgumentError("Must provide an array of numbers.");
-    } else if (Array.isArray(series[0]) && series[0].length === 0) {
+    } 
+    
+    if (arguments.length == 1, Array.isArray(series[0])) {        
+        if (series[0].length === 0 || !series[0].every((n) => typeof n === 'number')) {
+            throw new InvalidArgumentError("Must provide an array of numbers. Received empty array");
+        }
+
+        return (series[0] as number[]).reduce((a, x) => a + x, 0);
+    }
+    
+    let nums = Array.from(series as ArrayLike<number>);
+
+    if (!nums.every(n => typeof n === 'number')) {
         throw new InvalidArgumentError("Must provide an array of numbers. Received empty array");
     }
 
-    if (arguments.length == 1 && Array.isArray(series[0])) {
-        return (series[0] as number[]).reduce((a, x) => a + x, 0);
-    }
-
-    return Array.from(series as ArrayLike<number>).reduce((a, x) => (a + x), 0)
+    return nums.reduce((a, x) => (a + x), 0)
 }

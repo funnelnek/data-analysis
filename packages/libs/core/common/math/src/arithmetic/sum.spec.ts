@@ -11,6 +11,7 @@ describe("sum", () => {
         expect(() => sum(0)).toThrow(InvalidArgumentError);
         expect(() => sum([])).toThrow(InvalidArgumentError);
         expect(() => sum('0' as unknown as number)).toThrow(InvalidArgumentError);
+        expect(() => sum(1, '0' as unknown as number)).toThrow(InvalidArgumentError);
     });
 
     it("should sum all numbers from an array of numbers", () => {
