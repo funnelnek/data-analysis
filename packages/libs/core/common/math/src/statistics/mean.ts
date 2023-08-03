@@ -1,5 +1,6 @@
 import { sum } from "../arithmetic";
 
+
 /**
  * Calculate the mean/average from a series of numbers.
  * 
