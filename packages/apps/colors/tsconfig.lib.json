@@ -1,0 +1,18 @@
+{
+    "extends": "../../../../tsconfig.base.json",
+    "compilerOptions": {
+        "composite": true,
+        "rootDir": "src",
+        "outDir": "lib",
+        "jsx": "react-jsx",
+        "jsxImportSource": "@emotion/react",
+        "declarationDir": "@types/themes"
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "references": [
+        { "path": "../../libs/core/tsconfig.lib.json" },
+        { "path": "../../libs/themes/foundation/tsconfig.lib.json" }
+    ]
+}
