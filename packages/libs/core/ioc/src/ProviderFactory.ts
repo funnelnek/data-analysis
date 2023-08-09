@@ -1,11 +1,34 @@
-import { Injectable } from "@nestjs/common";
-import { ClassProvider, ConstructorProvider, ExistingProvider, FactoryProvider, Provider, Reflector, Type, ValueProvider } from "./contracts";
-import { IProviderFactory } from "./contracts/IProviderFactory";
 import { injector as reflector } from "./Injector";
 import { Reflection } from "./Reflection";
 import { ProviderOptions, ProviderType } from "./types";
-import { dependencies } from "./utils/dependencies";
+import { getProviderType, dependencies } from "./utils";
+import { UnknownProviderType, UnresolvedDependenciesError,  } from "./exception.ts";
+import { 
+    ClassProvider, 
+    ConstructorProvider, 
+    ExistingProvider, 
+    FactoryProvider, 
+    Provider, 
+    Reflector, 
+    ValueProvider, 
+    IProviderFactory 
+} from "./contracts";
 
+
+
+/**
+ * The provider factory describes how the injectable should be configured and registered to the injector. 
+ * 
+ * @remarks
+ * The provider factory configures and then registered itself with the injector. 
+ * It stores all the information needed to resolve the injectable. Once the injectable has been instantiated it is cache inside the provider factory and return this instance of the injectable when requested.   
+ * 
+ * 
+ * @since 1.0.0 
+ * 
+ * @typeParam T - The provider type.
+ * @typeParam V - The provider value type.
+ */
 export class ProviderFactory<T = any, V = T> implements IProviderFactory<T,V> {
     protected _deps!: ProviderFactory[];
     protected _implements!: V;
@@ -17,22 +40,58 @@ export class ProviderFactory<T = any, V = T> implements IProviderFactory<T,V> {
     protected _instance!: V;
     protected _factory!: T;
 
+    /**
+     * Create a new provider factory
+     * @param {FactoryProvider} provider - The FactoryProvider to register inside the injector container.
+     * @param {Reflector} injector - The injector container.
+     * @overload
+     */
     constructor(provider: FactoryProvider, injector?: Reflector);
+    /**
+     * Create a new provider factory
+     * @param {ExistingProvider} provider - The ExistingProvider to register inside the injector container.
+     * @param {Reflector} injector - The injector container.
+     * @overload
+     */
     constructor(provider: ExistingProvider, injector?: Reflector);
+     /**
+     * Create a new provider factory
+     * @param {ConstructorProvider} provider - The ConstructorProvider to register inside the injector container.
+     * @param {Reflector} injector - The injector container.
+     * @overload
+     */
     constructor(provider: ConstructorProvider, injector?: Reflector);
+    /**
+     * Create a new provider factory
+     * @param {ClassProvider} provider - The ClassProvider to register inside the injector container.
+     * @param {Reflector} injector - The injector container.
+     * @overload
+     */
     constructor(provider: ClassProvider, injector?: Reflector);
+    /**
+     * Create a new provider factory
+     * @param {ValueProvider} provider - The ValueProvider to register inside the injector container.
+     * @param {Reflector} injector - The injector container.
+     * @overload
+     */
     constructor(provider: ValueProvider, injector?: Reflector);
+    /**
+     * Create a new provider factory
+     * @param {Provider} provider - The Provider to register inside the injector container.
+     * @param {Reflector} _injector - The injector container.
+     */
     constructor (provider: Provider, protected _injector: Reflector = reflector) {
         let type = this.setType(provider);
 
         if (!type) {
-            throw new Error("Unknown provider type");
+            throw new UnknownProviderType("Unknown provider type");
         }
 
+        this.deps = 'deps' in provider ? provider.deps as ProviderFactory[] : [];
         this._provide = provider.provide;
         this._multi = provider.multi ?? false;
         this._singleton = provider.singleton ?? true;
-        this._options = provider;
+        this._options = {...provider, multi: this._multi, singleton: this._singleton};
         
         if (type === "ValueProvider") {
             this._instance = (provider as ValueProvider).useValue;
@@ -56,7 +115,7 @@ export class ProviderFactory<T = any, V = T> implements IProviderFactory<T,V> {
                 Reflect.defineMetadata("reflection", existingReflection, provider.provide);
             }
 
-            this._provide = aliasReflection.type;
+            this._provide = provider.provide;
             this._factory = provider.provide;
         }
 
@@ -66,29 +125,9 @@ export class ProviderFactory<T = any, V = T> implements IProviderFactory<T,V> {
             let deps: ProviderFactory[] = params.map(dependencies);
 
             if (!deps.every(d => d instanceof ProviderFactory)) {
-                throw new Error("Unable resolve provider dependencies");
-            }          
+                throw new UnresolvedDependenciesError("Unable resolve provider dependencies");
+            }
             
-            this._deps = deps;
-        }
-
-        if (type ===  "ConstructorProvider") {
-            let deps: ProviderFactory[] = (provider as ConstructorProvider).deps as ProviderFactory[];
-
-            if (!deps.every(d => d instanceof ProviderFactory)) {
-                throw new Error("Unable resolve provider dependencies");
-            }
-
-            this._deps = deps;
-        }
-
-        if (type === "FactoryProvider") {
-            let deps: ProviderFactory[] = (provider as FactoryProvider).deps as ProviderFactory[];
-
-            if (!deps.every(d => d instanceof ProviderFactory)) {
-                throw new Error("Unable resolve provider dependencies");
-            }
-
             this._deps = deps;
         }
 
@@ -101,7 +140,7 @@ export class ProviderFactory<T = any, V = T> implements IProviderFactory<T,V> {
                 Reflect.defineMetadata("reflection", reflection, provider.provide);
             }
 
-            this._provide = reflection.type as T;
+            this._provide = provider.provide;
             this._factory = provider.provide;
         }
 
@@ -151,7 +190,11 @@ export class ProviderFactory<T = any, V = T> implements IProviderFactory<T,V> {
     }
 
     set deps(value: ProviderFactory[]) {
-        this._deps = value;
+        let deps = this._deps = value.map(dependencies) as ProviderFactory[];
+
+        if (!deps.every(d => d instanceof ProviderFactory)) {
+            throw new UnresolvedDependenciesError("Unable resolve provider dependencies");
+        }
     }
 
     set options(value: ProviderOptions<ProviderType>) {
@@ -162,7 +205,7 @@ export class ProviderFactory<T = any, V = T> implements IProviderFactory<T,V> {
         let dependencies = this.deps.map(provider => provider.implements);
         let instance: V;
 
-        switch (this.type) {
+        switch (this.type) {            
             case "ClassProvider":
                 instance = new (this.options as ClassProvider).useClass(...dependencies);
                 break;
@@ -187,25 +230,15 @@ export class ProviderFactory<T = any, V = T> implements IProviderFactory<T,V> {
         return this._instance = instance;
     }
 
-    protected setType(provider: Provider): ProviderType | undefined {
-        if ((provider as ClassProvider).useClass) {
-            return this._type = "ClassProvider";
-        }
+    /**
+     * @param {Provider} provider - The provider to detect and set `_type`.
+     */
+    private setType(provider: Provider): ProviderType | undefined {
+        let type = getProviderType(provider);
 
-        if ((provider as ExistingProvider).useExisting) {
-            return this._type = "ExistingProvider";
-        }
-
-        if ((provider as FactoryProvider).useFactory) {
-            return this._type = "FactoryProvider";
-        }
-
-        if ((provider as ValueProvider).useValue) {
-            return this._type = "ValueProvider";
-        }
-
-        if ((provider as ConstructorProvider).provide instanceof Function) {
-            return this._type = "ConstructorProvider";
-        }
+        if (type) this._type = type;
+        return type;
     }
 }
+
+export default ProviderFactory;
